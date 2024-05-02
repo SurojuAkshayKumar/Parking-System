@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#parking-status {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.parking-spot {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.occupied {
+    color: #ff0000; /* Red */
+}
+
+.available {
+    color: #00ff00; /* Green */
+}
+ 

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <h2>Book a Parking Spot</h2>
+        {% if spot %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Spot ID: {{ spot.id }}</h5>
+                    <p class="card-text">Location: {{ spot.location }}</p>
+                    <p class="card-text">Status: {{ spot.status }}</p>
+                    {% if spot.status == 'Available' %}
+                        <form action="{{ url_for('book', spot_id=spot.id) }}" method="POST">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    {% else %}
+                        <button disabled class="btn btn-secondary">Not Available</button>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <p>Sorry, this parking spot does not exist.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
